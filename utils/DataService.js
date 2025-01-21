@@ -12,6 +12,13 @@ export function getDataResources() {
   return dataResources;
 }
 
+export function getServiceRequests() {
+  fetch("https://data.lacity.org/resource/b7dx-7gc3.json")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log(error.message));
+}
+
 export function getColorMap(discrete) {
   if (discrete) {
     return [
